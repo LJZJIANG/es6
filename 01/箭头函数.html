@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>es6箭头函数</title>
+</head>
+<body>
+    <h1>箭头函数:简化代码，更改this指向</h1>
+    <script>
+
+        // es5 --1
+       let person1 = {
+           names:['小明','小华','周星星'],
+           age:22,
+           hobby:function() {
+               var _this = this;//将this定义为函数内局部变量
+                return this.names.map(function(name) {
+                    return `${name}今年${_this.age}岁`;
+                })
+           }
+       }
+    //    es5 --2
+       let person = {
+           names:['小明','小华','周星星'],
+           age:22,
+           hobby:function() {
+                return this.names.map(function(name) {
+                    return `${name}今年${this.age}岁`;
+                }.bind(this)) // 通过bind更改this指向
+           }
+       }
+
+       
+       // es6
+       let person2 = {
+           names:['小明','小华','周星星'],
+           age:22,
+           hobby:function() {
+                return this.names.map(name=>{
+                    return `${name}今年${this.age}岁`;
+                })
+           }
+       }
+       console.log(person.hobby())
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数默认值</title>
+</head>
+<body>
+    <script>
+        // es5
+
+        function ajax1(url,method){
+            if(!method){
+                method = 'GET';
+            }
+            return method;
+        }
+
+        // es6
+
+
+        function ajax(url,method='GET') {
+            return method;
+        }
+
+
+
+
+        let url = 'http://www.baidu.com';
+        let method = 'POST';
+        console.log(ajax(url))
+        console.log(ajax(url,method));
+    </script>
+</body>
+</html>

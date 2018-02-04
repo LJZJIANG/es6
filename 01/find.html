@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let users = [
+           {name:'li'},
+           {name:'wei'},
+           {name:'zhang'},
+           {name:'hou'},
+           {name:'hou',id:1}
+       ]
+        // es5
+        var pers ;
+        for(var i in users){
+            if(users[i].name==='zhang'){
+                pers = users[i];
+                break;
+            }
+        }
+
+        // console.log(pers)
+
+
+        // es6
+       let person = users.find(user=>{
+            return user.name ==='zhang'
+       });
+    //    console.log(person)
+
+
+
+    let  moneys = [
+        {type:1,name:'人民币'},
+        {type:2,name:'美元'},
+        {type:3,name:'欧元'},
+        {type:4,name:'美元'},
+        {type:5,name:'英镑'},
+    ]
+    
+    let m1 = {type:3,content:'有钱啦，不知怎魔法'}
+
+    function compare(moneys,m1) {
+        return moneys.find(money=>{
+            return m1.type === money.type;
+        })
+    }
+
+    console.log(compare(moneys,m1));
+    </script>
+</body>
+</html>

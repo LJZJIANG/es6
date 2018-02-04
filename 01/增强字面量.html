@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>增强字面量</title>
+</head>
+<body>
+    <script>
+        let name= '小明',age=19;
+
+        let person1 = {
+            name:name,
+            age:age,
+            show:function(){
+                return `${this.name}今年${this.age}岁`;
+            }
+        }
+        /* 
+        等同于如下 。。。
+        
+         */
+
+         let person = {
+            name,
+            age,
+            show(){
+                return `${this.name}今年${this.age}岁`;
+            }
+        }
+        console.log(person.show())
+    </script>
+</body>
+</html>
