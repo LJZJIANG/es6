@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers = [3,44,31,68];
+        let sum = 0;
+        numbers.forEach(function(number) {
+            sum += number;
+        })
+        // console.log(sum);
+
+        let doubleNumbers = numbers.map(function (number) {
+            return number*2;
+        })
+        doubleNumbers.forEach(function(params) {
+            console.log(params)
+        })
+    </script>
+</body>
+</html>
