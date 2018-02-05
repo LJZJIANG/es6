@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 合并对象
+        let person1 = {name:'lihua',age:18};
+        let person2 = {name:'zhaomei',age:22};
+        let person3 = {name:'ww',hobby:'sign'};
+
+        Object.assign(person3,person2,person1);
+        console.log(person3);
+
+
+        let obj = {
+            name:'lisi',
+            age:18,
+            hobby:['eat','sleep'],
+            sex:'男'
+        }
+
+        for (const key in obj) {
+            console.log(key);
+        }
+
+        // for (const key in obj) {
+        //     if (obj.hasOwnProperty(key)) {
+        //         const element = obj[key];
+        //         console.log(element)
+        //     }
+        // }
+
+        // Object.keys(obj) 遍历键名
+        let attrs = Object.keys(obj);
+        console.log(attrs);
+    </script>
+</body>
+</html>
