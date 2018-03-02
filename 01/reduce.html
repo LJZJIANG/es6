@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组reduce方法</title>
+</head>
+<body>
+    <script>
+        let numbers = [51,6,58,2,9];
+        /*
+        reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。
+        total:初始值, 或者计算结束后的返回值。
+        item： 当前元素
+         */
+        let sum = numbers.reduce((total,item)=>{
+            // console.log(total,item)
+            return total+ item;
+        })
+
+        console.log(sum)
+    </script>
+</body>
+</html>
