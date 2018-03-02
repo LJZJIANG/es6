@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组解构</title>
+</head>
+
+<body>
+    <h3>将二维数组解构成数组对象</h3>
+    <script>
+        let arr = [
+            [1, 6],
+            [51, 8],
+            [-5, 24]
+        ]
+
+        // es5
+
+        // let newArr = arr.map(item=>{
+        //     let x = item[0];
+        //     let y = item[1];
+        // let [x,y] = item;
+        //     return {x,y}
+        // })
+
+        // es6
+
+        let newArr = arr.map(([x,y])=>{
+            return {x,y}
+        })
+        console.log(newArr)
+    </script>
+</body>
+
+</html>

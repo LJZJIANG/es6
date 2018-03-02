@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>es6 解构</title>
+</head>
+
+<body>
+    <script>
+        let person = {
+            name: '张三丰',
+            age: 108,
+            skill: '太极',
+            company: '武当'
+        }
+        // es5 方式，需要通过对象.属性的方式取值
+        // let str = `<h1>
+        //     ${person.name}今年${person.age}岁,精通${person.skill},来自${person.company}
+        // </h1>`;
+        
+        showInfo(person)
+        // es6 解构方式
+        function showInfo({name,age,skill,company}) {
+            document.write(`<h1>
+            ${name}今年${age}岁,精通${skill},来自${company}
+        </h1>`)
+        }
+        // function showInfo(str) {
+        //     document.write(str)
+        // }
+    </script>
+</body>
+
+</html>
