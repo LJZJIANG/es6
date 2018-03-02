@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <pre>完成 cookieJar 单例，它有三个方法：
+
+        set(name, value, days)：设置 cookie 的值，days 为多少天以后过期。
+        get(name)：获取 cookie 的值。
+        remove(name)：删除 cookie 的值。</pre>
+        <h1>------------------------------设置过期时间----------------------------------------</h1>
+        <p>名字: <input type="text" id="name"></p>
+        <p>值: <input type="text" id="value"></p>
+        <span>过期时间:</span>
+        <select>
+            <option value="0.5">30秒</option>
+            <option value="1">1分钟</option>
+            <option value="2">2分钟</option>
+            <option value="3">3分钟</option>
+            <option value="4">4分钟</option>
+            <option value="5">5分钟</option>
+        </select>
+        <button type="button">提交</button>
+    <script>
+        const cookieJar = {
+            set (name, value, days) {
+                /* TODO */
+                let data = new Date();
+                data.setDate(data.getTime()+days*60*1000);
+                document.cookie = `${name}=${value};expires=${data}`;
+                console.log(name,value,days)
+                },
+                get (name) {
+                /* TODO */
+                var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+                if(arr=document.cookie.match(reg))
+                return unescape(arr[2]);
+                else
+                return null;
+                },
+                remove (name) {
+                /* TODO */
+                document.cookie=`${name}=outdate;expires=${new Date(Date.now()-36110000)}`
+                }
+            }
+
+          document.querySelector('button').onclick = () => {
+              let days = parseFloat(document.querySelector('select').value);
+              let key = document.querySelector('#name').value;
+              let value = document.querySelector('#value').value;
+              cookieJar.set(key,value,days)
+              setTimeout(() => {
+                cookieJar.remove(key)
+              }, 10000);
+          }  
+    </script>
+</body>
+</html>
