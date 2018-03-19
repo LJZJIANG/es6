@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>es6 面向对象  class</title>
+</head>
+<body>
+    <script>
+        class Car{
+            // constructor(option){
+            //     this.title = option.title;
+            // }
+
+            // 解构
+            constructor({title}){
+                this.title = title
+            }
+            drive(){
+                console.log('driveing。。。')
+            }
+        }
+
+        const car = new Car({title:'BMW'});
+        console.log(car.title)
+        car.drive()
+
+        class Ofo extends Car{
+            constructor(options){
+                super(options)
+                this.color = options.color;
+            }
+        }
+
+        const ofo = new Ofo({color:'yellow',wheelCount:2});
+        console.log(ofo.color)
+        ofo.drive();
+    </script>
+</body>
+</html>
