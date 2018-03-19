@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>generator 生成器</title>
+</head>
+<body>
+    <h1>斐波那契数列练习 ,前两个数相加等于后一个数 eg:  (0,1,1,2,3,5,8)</h1>
+    <script>
+        // es5方式
+        function fib(max) {
+            var a = 0,b=1,arr=[0,1];
+            while (arr.length<max) {
+                [a,b]=[b,a+b];
+                arr.push(b);
+            }
+            return arr;
+        }
+        console.log(fib(10));
+
+        // es6 generator 生成器方式
+
+        function* fib1(max){
+            let a = 0,b=1,n=0;
+            while(n<max){
+                yield a;
+                [a,b]=[b,a+b];
+                n++;
+            }
+            return;
+        }
+        
+        for (const i of fib1(10)) {
+            console.log(i)
+        }
+    </script>
+</body>
+</html>
