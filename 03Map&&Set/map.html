@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>数据结构之 -- Map</h1>
+    <script>
+
+        const map = new Map();
+        
+        const key1 = 'key';
+        const key2 = {'哈哈':"嘻嘻"};
+        const key3 = [22,12,3434];
+
+        map.set(key1,'value1');
+        map.set(key2,'value2');
+        map.set(key3,'value3');
+
+        // console.log(map.size)
+
+        // 遍历 map
+        // for (const [key,value] of map) {
+        //     console.log(key+'===='+value);
+        // }
+        
+        // 只遍历key
+        // for (const key of map.keys()) {
+        //     console.log(key)
+        // }
+
+        // 只遍历value
+
+        // for (const value of map.values()) {
+        //     console.log(value)
+        // }
+        
+        // forEach 遍历map
+
+        // map.forEach((value,key)=>{
+        //     console.log(value,key)
+        // })
+
+
+        // map 转为数组
+
+        const arr = Array.from(map);
+        arr.forEach((item,index) => {
+            console.log(item,index)
+        });
+
+        // 数组转为 map解构
+
+        const newArr =  [[12,33],[23,5456],['12','3434']];
+        console.log(new Map(newArr))
+
+    </script>
+</body>
+
+</html>
