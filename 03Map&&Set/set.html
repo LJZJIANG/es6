@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>数据结构之--Set</h1>
+    <h2>set key是唯一的，可以用来数组去重</h2>
+    <script>
+        const set = new Set();
+        set.add(30);
+        set.add('哈哈哈');
+        set.add({test:'test'});
+        set.add(30);
+        console.log(set)
+
+        // 判断set集合中是否 包含某个数
+
+        console.log(set.has(30));
+
+        // set 删除某个元素
+        // set.delete(30);
+        console.log(set.has(30));
+
+        // for... of 遍历set集合
+        console.log('for... of 遍历set集合')
+        for (const value of set) {
+         console.log(value)   
+        }
+
+        // forEach 遍历
+        console.log('forEach 遍历set集合')
+        set.forEach(value=>{
+            console.log(value)
+        })
+
+        // set集合转为数组
+
+        const arr = Array.from(set);
+        console.log(arr)
+
+        // 利用set进行数组去重
+
+        const newArr = [23,34,23,3434,677,56,78,54,34];
+        console.log(new Set(newArr))
+    </script>
+</body>
+</html>
