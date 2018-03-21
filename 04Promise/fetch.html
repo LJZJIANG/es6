@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>es6 的HTTP请求之 fetch篇</h1>
+    <script>
+        // const url = 'http://jsonplaceholder.typicode.com/albums';
+        const url = 'http://jsonplaceholder.typicode2222.com/albums';
+        fetch(url).then(res=>res.json())
+        .then(data=>console.log(data))
+
+        // 下面演示执行catch的时候
+
+        .catch(err=>console.log('ERR:'+err))
+        // http://jsonplaceholder.typicode.com/albums23232 随意修改接口参数并不会执行catch方法，只会报404错误
+        // 只有http://jsonplaceholder.typicode.com 出错时，如http://jsonplaceholder.typicode2323.com时，
+        // 才会执行catch中的方法,打印信息如下:
+
+        /* 
+        fetch.html:14 GET http://jsonplaceholder.typicode2222.com/albums net::ERR_CONNECTION_TIMED_OUT
+        (anonymous) @ fetch.html:14
+        fetch.html:19 ERR:TypeError: Failed to fetch
+         */
+    </script>
+</body>
+</html>
