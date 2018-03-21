@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>es6 之promise</h1>
+    <script>
+        /*
+         Promise 执行的三种状态
+         1.pending
+         2.resolved(代表成功)=>then
+         3.rejected(失败)=> catch
+         */
+        const promise = new Promise((resolve,reject)=>{
+            // resolve();
+            reject();
+        })
+        // console.log(promise);
+        promise.then(()=> console.log('执行成功'))
+        .then(()=> console.log('我可以无限次执行'))
+        .catch((err)=> console.log('执行出错了~~~')) //只有当回调函数执行reject()方法时，才回执行catch方法
+    </script>
+</body>
+</html>
