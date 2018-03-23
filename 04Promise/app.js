@@ -26,7 +26,7 @@ function getJson(params) {
      fetch('posts.json')
      .then(res=>res.json())
      .then(data=>{
-        //  console.log(data)
+         console.log(data)
         let outputStr = '';
         data.forEach(item => {
             outputStr +=`<li>${item.title}-----${item.body}</li>`

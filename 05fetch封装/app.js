@@ -28,3 +28,7 @@ const data = {
 easyHttp.delete(url+'/2',data)
         .then(res=>console.log(res))
         .catch(err=>console.log(err))
+
+
+    
+       
