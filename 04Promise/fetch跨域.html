@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>利用fetch设置headers解决跨域</h1>
+    <script>
+        // const url = 'http://jsonplaceholder.typicode.com/todos'
+        const url = 'https://segmentfault.com/frontend';
+        let myHeaders = new Headers({
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'text/plain'
+        });
+
+        fetch(url,{
+            method: 'GET',
+            headers: myHeaders, 
+            mode: 'no-cors'
+        })
+        .then(res=>console.log(res))
+        // .then(data=>console.log(data))
+    </script>
+</body>
+</html>
